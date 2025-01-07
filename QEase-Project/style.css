@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ensures content is centered vertically */
+}
+  
+.form-title {
+    color: #8759c4;
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: left; /* Align the heading to the left */
+    width: 100%; /* Makes heading span full width */
+    max-width: 900px; /* Matches the form-container width */
+}
+  
+.form-container {
+    background-color: #dad7f5;
+    padding: 30px 30px;
+    padding-bottom: 15px;
+    padding-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 100%;
+    height: 450px;
+    margin-top: 10px;
+}
+  
+form {
+    display: flex;
+    flex-direction: column;
+}
+  
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555555;
+}
+  
+input,
+textarea,
+select {
+    margin-bottom: 15px;
+    padding: 5px 0;
+    border: none;
+    border-bottom: 2px solid #cccccc;
+    outline: none;
+    font-size: 18px;
+    width: 100%; /* Make fields take full width below labels */
+}
+
+textarea {
+    height: 23px;
+    width: 70%; /* Make the textarea width consistent */
+}
+
+#email {
+    width: 70%; /* Set the width of the email input field to 70% */
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-bottom: 2px solid #7f3bd8;
+}
+  
+.inline-fields {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+  
+.inline-fields div {
+    flex: 1; /* Ensures fields share equal width */
+}
+  
+button {
+    background-color: #dc74cb;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 25px;
+    margin-left: auto;
+    width: 150px; /* Fixed button width */
+}
+  
+button:hover {
+    background-color: #5f2aa3;
+}

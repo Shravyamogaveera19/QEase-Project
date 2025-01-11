@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Departments</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class ="overall">
+  <div class="container">
+    <h2>Select Department</h2>
+    <label for="department">Department:</label>
+    <select id="department" onchange="showDoctorSelection()">
+      <option value="">-- Select Department --</option>
+      <option value="cardiology">Cardiology</option>
+      <option value="orthopedics">Orthopedics</option>
+      <option value="pediatrics">Pediatrics</option>
+      <option value="neurology">Neurology</option>
+    </select>
+
+    <!-- Second dropdown for doctors -->
+    <div id="doctor-selection" class="hidden">
+      <label for="doctors">Doctors:</label>
+      <select id="doctors" onchange="enableProceedButton()">
+        <option value="">-- Select Doctor --</option>
+      </select>
+    </div>
+
+    <!-- Proceed button -->
+    <button id="proceed-btn" class="hidden" onclick="proceed()">Proceed</button>
+  </div>
+
+  <script>
+    function showDoctorSelection() {
+      const doctorsByDepartment = {
+        cardiology: ["Dr. John Smith", "Dr. Emily Davis", "Dr. Michael Brown"],
+        orthopedics: ["Dr. Laura Wilson", "Dr. Robert Johnson", "Dr. Sarah Lee"],
+        pediatrics: ["Dr. Anna Taylor", "Dr. Chris Green", "Dr. David White"],
+        neurology: ["Dr. Sophia Clark", "Dr. James Martinez", "Dr. Olivia Hall"]
+      };
+
+      const department = document.getElementById("department").value;
+      const doctorSelectionDiv = document.getElementById("doctor-selection");
+      const doctorsDropdown = document.getElementById("doctors");
+      const proceedBtn = document.getElementById("proceed-btn");
+
+      // Reset doctors dropdown and proceed button
+      doctorsDropdown.innerHTML = '<option value="">-- Select Doctor --</option>';
+      proceedBtn.classList.add("hidden");
+
+      // Populate doctors dropdown based on the selected department
+      if (department) {
+        const doctors = doctorsByDepartment[department];
+        doctors.forEach(doctor => {
+          const option = document.createElement("option");
+          option.value = doctor;
+          option.textContent = doctor;
+          doctorsDropdown.appendChild(option);
+        });
+
+        // Show doctors dropdown
+        doctorSelectionDiv.classList.remove("hidden");
+      } else {
+        doctorSelectionDiv.classList.add("hidden");
+      }
+    }
+
+    function enableProceedButton() {
+      const doctor = document.getElementById("doctors").value;
+      const proceedBtn = document.getElementById("proceed-btn");
+
+      if (doctor) {
+        proceedBtn.classList.remove("hidden");
+      } else {
+        proceedBtn.classList.add("hidden");
+      }
+    }
+
+    function proceed() {
+      const department = document.getElementById("department").value;
+      const doctor = document.getElementById("doctors").value;
+
+      if (department && doctor) {
+        alert(`You have selected:\nDepartment: ${department}\nDoctor: ${doctor}`);
+      }
+    }
+  </script>
+    </div>
+</body>
+</html>

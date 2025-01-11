@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Appointment Queue</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="queue-container">
+    <!-- Current Patient -->
+    <div class="queue-card" id="current-patient">
+      <h3>Current Patient</h3>
+      <p><strong>Name:</strong> -</p>
+      <p><strong>Queue No:</strong> -</p>
+    </div>
+    
+    <!-- Up Next -->
+    <div class="queue-card" id="up-next-patient">
+      <h3>Up Next</h3>
+      <p><strong>Name:</strong> -</p>
+      <p><strong>Queue No:</strong> -</p>
+    </div>
+    
+    <!-- Next Patient -->
+    <div class="queue-card" id="next-patient">
+      <h3>Later</h3>
+      <p><strong>Name:</strong> -</p>
+      <p><strong>Queue No:</strong> -</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Appointment List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Patient No</th>
+          <th>Date</th>
+          <th>Name</th>
+          <th>Mobile Number</th>
+          <th>Mail ID</th>
+          <th>Estimated Time</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="appointment-table">
+        <!-- Dynamic content will be inserted here -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    // Array of patient objects
+    const appointments = [
+      { 
+        patientNo: "001", 
+        date: "07-01-2025", 
+        name: "Sagar", 
+        mobile: "9876543210", 
+        email: "sagar@example.com", 
+        estimatedTime: "10:00 AM", 
+        status: "Completed" 
+      },
+      { 
+        patientNo: "002", 
+        date: "07-01-2025", 
+        name: "Ramya", 
+        mobile: "9988776655", 
+        email: "ramya@example.com", 
+        estimatedTime: "10:15 AM", 
+        status: "Pending" 
+      },
+      { 
+        patientNo: "003", 
+        date: "07-01-2025", 
+        name: "Sandhya", 
+        mobile: "9123456789", 
+        email: "sandhya@example.com", 
+        estimatedTime: "10:30 AM", 
+        status: "Pending" 
+      }
+    ];
+
+    // Dynamically populate the table
+    const tableBody = document.getElementById("appointment-table");
+
+    appointments.forEach((appointment) => {
+      const row = document.createElement("tr");
+
+      row.innerHTML = `
+        <td>${appointment.patientNo}</td>
+        <td>${appointment.date}</td>
+        <td>${appointment.name}</td>
+        <td>${appointment.mobile}</td>
+        <td>${appointment.email}</td>
+        <td>${appointment.estimatedTime}</td>
+        <td><span class="status ${appointment.status.toLowerCase()}">${appointment.status}</span></td>
+      `;
+
+      tableBody.appendChild(row);
+    });
+
+    // Function to dynamically update current, up next, and next patients
+    function updateQueue(appointments) {
+      const currentPatient = document.getElementById("current-patient");
+      const upNextPatient = document.getElementById("up-next-patient");
+      const nextPatient = document.getElementById("next-patient");
+
+      // Update Current Patient
+      if (appointments[0]) {
+        currentPatient.innerHTML = `
+          <h3>Current Patient</h3>
+          <p><strong>Name:</strong> ${appointments[0].name}</p>
+          <p><strong>Queue No:</strong> ${appointments[0].patientNo}</p>
+        `;
+      }
+
+      // Update Up Next
+      if (appointments[1]) {
+        upNextPatient.innerHTML = `
+          <h3>Up Next</h3>
+          <p><strong>Name:</strong> ${appointments[1].name}</p>
+          <p><strong>Queue No:</strong> ${appointments[1].patientNo}</p>
+        `;
+      }
+
+      // Update Next Patient
+      if (appointments[2]) {
+        nextPatient.innerHTML = `
+          <h3>Next Patient</h3>
+          <p><strong>Name:</strong> ${appointments[2].name}</p>
+          <p><strong>Queue No:</strong> ${appointments[2].patientNo}</p>
+        `;
+      }
+    }
+
+    // Call the function to update the queue
+    updateQueue(appointments);
+  </script>
+</body>
+</html>

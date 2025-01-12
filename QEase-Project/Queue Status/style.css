@@ -1,0 +1,90 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(to right, rgb(247, 241, 224), rgb(226, 193, 242));
+    color: #3d3d34;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 10px;
+  }
+  
+  /* Queue Container */
+  .queue-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    height: 450px;
+    min-height: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  }
+  
+  /* Hover Effect */
+  .queue-container:hover {
+    transform: scale(1.05); /* Enlarges the flexbox slightly */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Adds a deeper shadow for emphasis */
+  }
+  
+  /* Queue Header */
+  .queue-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .queue-header h2 {
+    margin-bottom: 10px;
+    color: #aa07e0;
+    font-size: 2.1rem;
+  }
+  
+  .queue-header p {
+    font-size: 1.1rem;
+    color: #382d2d;
+  }
+  
+  /* Patients Remaining */
+  #patients-remaining {
+    font-size:25px; /* Increased font size for better emphasis */
+    color: #4a6dd4; /* Optional: Highlight this text with the theme color */
+    font-weight:bold;
+  }
+  /* Queue Details */
+  .queue-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .detail-box {
+    display: flex;
+    font-weight: bold;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsl(185, 65%, 97%);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .detail-box p {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+  
+  strong {
+    color: #4a4a4a;
+  }
+  

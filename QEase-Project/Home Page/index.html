@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    <title>QEase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="overall">
+    <header class="header">
+        <img class="logo" src="QEase Logo.svg" alt="QEase">
+
+        <nav class="navbar">
+            <a class="nav-link active" href="#home">Home</a>
+            <a class="nav-link" href="#features">Features</a>
+            <a class="nav-link" href="#about">About Us</a>
+            <a class="nav-link" href="#reach">Reach Out</a>
+        </nav>
+        <a class="btn" href="#login"><button>Login</button></a>
+            <button class="hamburger" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+    </header>
+    <div class="homepage-content">
+        <!-- Banner Section -->
+        <section class="home-container" id="home">
+            <div class="home-content">
+                <h2>Welcome to QEase</h2>
+                <p>Your one-stop solution for efficient queue management<br/>
+                 Say goodbye to long waiting times and hello to seamless, efficient queue management. Elevate customer satisfaction and streamline operations like never before.</p>
+                 <button class="btn-primary" onclick="location.href='#booking';">Book a Queue</button>
+                 <button class="btn-secondary" onclick="location.href='#features';">Learn More</button>
+            
+                 <!-- Stats Section -->
+                 <div class="stats-section">
+                    <div class="stats-icons">
+                        <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User 1">
+                        <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="User 2">
+                        <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="User 3">
+                        <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="User 4">
+                        <img src="https://randomuser.me/api/portraits/men/5.jpg" alt="User 5">
+                    </div>
+                    <p class="stats-text">
+                    <span>1,000,000+</span> queues managed seamlessly last year!
+                    </p>
+                </div>
+            </div>
+            <div class="home-image">
+                <img src="https://res.cloudinary.com/dpyt0hm3q/image/upload/v1736663971/QEase_homepage_zobove.jpg" alt="Queue Management Image">
+            </div>
+        </section>
+        
+
+        <!-- Features Section -->
+        <section class="features" id="features">
+            <h2 class="features-title">Features</h2>
+            <div class="feature-container">
+                <div class="feature-box">
+                    <i class="fas fa-users"></i>
+                    <h3>Real-time Queue Management</h3>
+                    <p>Track and manage queues in real-time for better service efficiency.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Data Analytics</h3>
+                    <p>Get insightful data to optimize queue management and customer experience.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile Accessibility</h3>
+                    <p>Manage queues on the go with our easy-to-use mobile app.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section class="booking" id="booking">
+            <h2 class="section-title">Book a Queue</h2>
+            <p>Save time and ensure your spot by booking your queue online.</p>
+            <div class="booking-options">
+                <button class="btn-primary" href="#">Book for a Hospital</button>
+                <button class="btn-primary" onclick="location.href='#';">Book for a Bank</button>
+                <button class="btn-primary" onclick="location.href='#';">Book for Retail</button>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <h2 class="section-title">About QEase</h2>
+            <p>QEase is an advanced queue management system designed to optimize the waiting experience for both customers and service providers.
+                 Whether it's a hospital, bank, retail store, or government office, managing queues efficiently can drastically improve customer satisfaction and operational efficiency. That’s where QEase comes in.
+                 By integrating advanced features like real-time tracking, automated notifications, and data-driven insights, we ensure a smooth and stress-free experience for both customers and service providers.
+            </p>
+            <a href="#features" class="btn">Explore Features</a>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="reach">
+            <h2 class="section-title">Reach Out</h2>
+            <p>If you have any questions or want to learn more, feel free to reach out to us!</p>
+            <form action="#" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+        <p>&copy; 2025 QEase. All rights reserved. | <a href="#privacy">Privacy Policy</a></p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</div>
+</body>
+</html>

@@ -1,0 +1,428 @@
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* General Styles */
+.overall{
+    line-height: 1.6;
+    color: #333;
+}
+
+
+/* Header Section */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:80px;
+    padding: 10px 50px;
+    background-color:blueviolet;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    height:100px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    margin-left:auto;
+}
+
+.navbar a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+}
+
+.navbar a:hover::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    bottom: -2px;
+    left: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.btn {
+    margin-left: 30px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: white;
+    color: #8a2be2;
+    font-size:18px;
+    border: 2px solid white;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #6a1bb0;
+    color: white;
+}
+
+/* Banner Section */
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 0;
+    background-color:white;
+    min-height: 100vh;
+}
+
+.home-content {
+    flex: 1;
+    padding-left: 40px;
+    text-align: left;
+}
+
+.home-content h2 {
+    font-size: 48px;
+    color: #8a2be2;
+    margin-bottom: 20px;
+}
+
+.home-content p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.home-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.home-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border-width:0px;
+   /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);*/
+}
+
+.btn-primary {
+    padding: 10px 25px;
+    background-color: #8a2be2;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: #6a1bb0;
+}
+
+.btn-secondary {
+    padding: 10px 25px;
+    background-color: #ffffff;
+    color: #8a2be2;
+    border: 2px solid #8a2be2;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background-color: #8a2be2;
+    color: white;
+}
+
+.stats-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.stats-icons {
+    display: flex;
+}
+
+.stats-icons img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-right: -10px; /* Overlapping effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.stats-text {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+.stats-text span {
+    color: blueviolet; /* Bright color for emphasis */
+}
+
+
+/* Features Section */
+.features {
+    padding: 80px 20px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.features-title {
+    font-size: 36px;
+    color: #8a2be2;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.feature-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.feature-box {
+    background-color: white;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 300px;
+    background-image: linear-gradient(to right,rgb(242, 232, 247),rgb(171, 134, 207));
+}
+
+.feature-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.feature-box i {
+    font-size: 40px;
+    color: #8a2be2;
+    margin-bottom: 20px;
+}
+
+.feature-box h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.feature-box p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Booking Section */
+.booking {
+    padding: 80px 50px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.booking-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.booking-options button {
+    padding: 15px 30px;
+    background-color: #8a2be2;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.booking-options button:hover {
+    background-color: #6a1bb0;
+}
+
+/* About Section */
+.about {
+    padding: 80px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.about p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.about .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 30px;
+    background-color: #8a2be2;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.about .btn:hover {
+    background-color: #6a1bb0;
+}
+
+/* Contact Section */
+.contact {
+    padding: 80px 20px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.contact button {
+    padding: 15px 30px;
+    background-color: #8a2be2;
+    color: white;
+    border-radius: 30px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: #6a1bb0;
+}
+
+/* Footer Section */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer a {
+    color: #8a2be2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer .social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+    color: #8a2be2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .banner-image {
+        justify-content: center;
+    }
+
+    .feature-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-box {
+        width: 90%;
+    }
+}
+/* Adding hamburger */
+/* Default state: hide the hamburger button */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Show the hamburger button on smaller screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show hamburger on small screens */
+    }
+
+    .navbar {
+        display: none; /* Hide navbar by default on small screens */
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        margin-top: 10px;
+        background-color: blueviolet;
+    }
+
+    .navbar.show-menu {
+        display: flex; /* Show navbar when the menu is toggled */
+    }
+}
